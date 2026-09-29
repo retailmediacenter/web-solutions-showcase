@@ -1,0 +1,9 @@
+{
+  "name": "nina22-web-solutions-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Samostalni statički demo NINA 22; podaci spremni za naknadno mapiranje u RMC Web Solutions",
+  "type": "module",
+  "scripts": {"build":"node scripts/build.mjs"},
+  "engines": {"node":">=18"}
+}
