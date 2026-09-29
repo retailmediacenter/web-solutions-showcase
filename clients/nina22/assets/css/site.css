@@ -225,3 +225,69 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;strok
 @media(hover:none){.shine-card:hover{transform:none}.shine-card:hover::after{animation:none;opacity:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.hero-photo{transform:none;will-change:auto}}
 .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+
+/* V3.5 — Only the "Naši objekti" photo lightbox: image-first, translucent edge.
+   Service-information and video modals deliberately remain unchanged. */
+.modal-panel:has(.modal-photo){
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:fit-content;
+  max-width:calc(100vw - 32px);
+  max-height:calc(100svh - 24px);
+  padding:8px;
+  overflow:visible;
+  background:rgba(12,29,47,.30);
+  border:1px solid rgba(207,171,104,.65);
+  border-radius:15px;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  box-shadow:0 24px 80px rgba(0,0,0,.55);
+}
+.modal-panel:has(.modal-photo) #modal-content,
+.modal-panel:has(.modal-photo) #modal-content>div{
+  width:fit-content;
+  max-width:100%;
+  margin:0;
+}
+.modal-panel:has(.modal-photo) #modal-content>div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.modal-panel:has(.modal-photo) .modal-photo{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:min(1100px,calc(100vw - 54px));
+  max-height:calc(100svh - 94px);
+  object-fit:contain;
+  margin:0;
+  border-radius:10px;
+  border:1px solid rgba(209,172,104,.72);
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+}
+.modal-panel:has(.modal-photo) .modal-caption{
+  max-width:calc(100vw - 65px);
+  margin:7px 4px 1px!important;
+  padding:4px 12px;
+  color:#fff5e2;
+  background:rgba(9,28,46,.75);
+  border-radius:999px;
+  font-size:11px!important;
+  line-height:1.35;
+  text-align:center;
+}
+.modal-panel:has(.modal-photo) .modal-close{
+  right:-12px;
+  top:-12px;
+  box-shadow:0 2px 15px rgba(0,0,0,.38);
+}
+@media(max-width:600px){
+  .modal:has(.modal-photo){padding:9px}
+  .modal-panel:has(.modal-photo){max-width:calc(100vw - 18px);padding:5px;border-radius:12px}
+  .modal-panel:has(.modal-photo) .modal-photo{max-width:calc(100vw - 32px);max-height:calc(100svh - 82px);border-radius:9px}
+  .modal-panel:has(.modal-photo) .modal-caption{font-size:10px!important;margin-top:5px!important}
+  .modal-panel:has(.modal-photo) .modal-close{right:-6px;top:-10px}
+}
