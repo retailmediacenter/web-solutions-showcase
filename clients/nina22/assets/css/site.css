@@ -335,3 +335,79 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;strok
 .work .work-compare-chip{position:absolute;z-index:2;top:8px;padding:3px 7px;border:1px solid #e3c588a8;border-radius:5px;background:#102d45d9;color:#fff;font:700 10px/1.25 'DM Sans',Arial,sans-serif;letter-spacing:.07em}
 .work-compare-chip--pre{left:8px}.work-compare-chip--post{left:calc(50% + 8px)}
 @media(max-width:480px){.work .work-compare-chip{font-size:8px;top:5px;padding:2px 4px}.work-compare-chip--pre{left:5px}.work-compare-chip--post{left:calc(50% + 5px)}}
+
+
+/* V3.8 — VIDEO lightbox follows the existing V3.5 image gallery language.
+   CSS-only: service details and photo lightbox are unchanged. */
+.modal:has(.modal-video){padding:16px}
+.modal-panel:has(.modal-video){
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:fit-content;
+  max-width:calc(100vw - 32px);
+  max-height:calc(100svh - 24px);
+  padding:7px;
+  overflow:visible;
+  background:rgba(12,29,47,.32);
+  border:1px solid rgba(207,171,104,.65);
+  border-radius:15px;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  box-shadow:0 24px 80px rgba(0,0,0,.55);
+}
+.modal-panel:has(.modal-video) #modal-content,
+.modal-panel:has(.modal-video) #modal-content>div{
+  width:fit-content;
+  max-width:100%;
+  margin:0;
+}
+.modal-panel:has(.modal-video) #modal-content>div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.modal-panel:has(.modal-video) .modal-video{
+  order:1;
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:calc(100vw - 56px);
+  max-height:calc(100svh - 100px);
+  object-fit:contain;
+  margin:0;
+  border:1px solid rgba(209,172,104,.75);
+  border-radius:10px;
+  background:#050b12;
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+}
+/* The video title doubles as a compact caption beneath the picture. */
+.modal-panel:has(.modal-video) .modal-video-title{
+  order:2;
+  font:600 12px/1.4 'DM Sans',Arial,sans-serif;
+  color:#fff5e2;
+  margin:7px 4px 1px;
+  padding:5px 13px;
+  background:rgba(9,28,46,.78);
+  border-radius:999px;
+  text-align:center;
+  max-width:calc(100vw - 58px);
+}
+/* Housekeeping text is no longer needed visually. Playback still stops on close. */
+.modal-panel:has(.modal-video) .modal-caption{display:none}
+.modal-panel:has(.modal-video) .modal-close{
+  right:-12px;
+  top:-12px;
+  box-shadow:0 2px 15px rgba(0,0,0,.38);
+}
+@media(max-width:600px){
+  .modal:has(.modal-video){padding:9px}
+  .modal-panel:has(.modal-video){max-width:calc(100vw - 18px);padding:5px;border-radius:12px}
+  .modal-panel:has(.modal-video) .modal-video{
+    max-width:calc(100vw - 32px);
+    max-height:calc(100svh - 82px);
+    border-radius:9px;
+  }
+  .modal-panel:has(.modal-video) .modal-video-title{font-size:11px;margin-top:6px;padding:4px 10px}
+  .modal-panel:has(.modal-video) .modal-close{right:-6px;top:-10px}
+}
