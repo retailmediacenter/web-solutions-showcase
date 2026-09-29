@@ -18,5 +18,8 @@
   "videoDeepCleaning": "assets/video/dubinsko-ciscenje.mp4",
   "beforeCleaning": "assets/images/cleaning/before-after/nina22_pre_01.webp",
   "afterCleaning": "assets/images/cleaning/before-after/nina22_posle_01.webp",
-  "building1full": "assets/images/buildings/nina22_building_01_full.webp"
+  "building1full": "assets/images/buildings/nina22_building_01_full.webp",
+  "building2full": "assets/images/buildings/nina22_building_02_full.webp",
+  "lightingThumb": "assets/images/maintenance/nina22_rasveta_pre_posle_thumb.webp",
+  "lightingFull": "assets/images/maintenance/nina22_rasveta_pre_posle_full.webp"
 }

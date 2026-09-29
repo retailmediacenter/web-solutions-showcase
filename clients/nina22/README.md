@@ -1,4 +1,4 @@
-# NINA 22 — V3.4 PREMIUM / SEO (glavni status)
+# NINA 22 — V3.7 PREMIUM / SEO (glavni status)
 
 **Status:** Samostalni demonstracioni sajt, spreman za postavljanje u `web-solutions-showcase`. Web Solutions generator/Editor V47 nije menjan niti kopiran. Ovaj projekat sadrži *pripremne* klijentske podatke, lokalne slike, CSS i JS; **nije već integrisan sa Editorom**. `data-editor-key` markeri su priprema, ne funkcionalni Editor.
 
@@ -15,14 +15,14 @@ Zameniti fotografiju u **istom folderu pod istim nazivom i ekstenzijom**. Nije p
 |---|---|---|---|
 | `assets/images/hero/` | HERO i preview za Showcase | 16:9 | `nina22_hero_01.webp` |
 | `assets/images/services/` | 3 kartice usluga | 4:3 | `nina22_service_upravljanje_01.webp` |
-| `assets/images/buildings/` | Prvi stvarni objekat + 4 demo prikaza | 16:9 kartica, puni original za popup | `nina22_building_01.webp` + `nina22_building_01_full.webp` |
+| `assets/images/buildings/` | Dva stvarna objekta + 3 demo prikaza | 16:9 kartica, puni original za popup | `nina22_building_01.webp` + `nina22_building_01_full.webp` |
 | `assets/images/cleaning/` | Dubinsko čišćenje, 3 fotografije | 4:3 | `nina22_cleaning_sofa_01.webp` |
 | `assets/images/brand/` | Originalni simbol iz Marinine slike | transparentni PNG | `nina22_original_mark.png` |
 | `assets/images/video-posters/` | Cover video-snimka | 4:3 | `nina22_video_odrzavanje_01.webp` |
 | `assets/images/social/` | Deljenje linka na društvenim mrežama | 1200 × 630 | `nina22-og.jpg` |
 | `assets/video/` | Video klipovi | originalni format | `odrzavanje-hodnika.mp4` |
 
-Prva slika u galeriji zgrada je **stvarna fotografija** objekta na adresi Miladina Pećinara 127G, Zlatibor, prema materijalu koji je Marina dostavila. Preostale četiri slike zgrada, kao i slike nameštaja i usluga, **ilustrativni su demo isečci** i ne smeju se objavljivati kao stvarne reference NINA 22. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
+Prve dve slike u galeriji zgrada su **stvarne fotografije** objekata na adresama Miladina Pećinara 127G i Drinske Divizije 16, Zlatibor, prema dostavljenim materijalima. Preostale tri slike zgrada, kao i slike nameštaja i usluga, **ilustrativni su demo isečci** i ne smeju se objavljivati kao stvarne reference NINA 22. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
 
 ## SEO: demo je zaštićen od indeksiranja
 - Sajt ima srpski `lang`, jedan H1, deskriptivne H2/H3 naslove, Title i meta opis orijentisane na **upravljanje i održavanje zgrada na Zlatiboru**, odgovarajuće `alt` opise, optimizovane lokalne WEBP fajlove, responsive layout i OG/Twitter meta oznake.
@@ -66,3 +66,12 @@ HERO fotografija sada je običan `<img src="assets/images/hero/nina22_hero_01.we
 - Ispod kartice je natpis **Miladina Pećinara 127G — Zlatibor**, a u popup-u puna adresa. Ovo je adresa **objekta pod upravljanjem**, ne adresa sedišta agencije. Ne unositi je u lokalni SEO `LocalBusiness.address` kao adresu firme.
 - Preostale četiri ilustrativne slike su zadržane, ali jasno označene kao demo, kako se ne bi predstavljale kao stvarne reference. Prilikom pristizanja fotografija menjati odgovarajući `buildingN` zapis u `data/images.json` i dopuniti `data/site.json` (caption, alt, actual).
 - Showcase glavna strana i njen CSS nisu menjani. Sajt i dalje ima **noindex** do završetka i odobrenja produkcionog materijala.
+
+
+## V3.7 — druga stvarna referenca i kompaktni prikaz radova
+- `assets/images/buildings/nina22_building_02.webp` — odabrana vodoravna fotografija objekta Drinske Divizije 16, Zlatibor; naslov/adresa stoje ispod galerijske kartice.
+- `assets/images/buildings/nina22_building_02_full.webp` — isti kadar u većoj rezoluciji za **postojeći V3.5 foto-modal**. HTML/JS foto-modala nisu menjani.
+- `assets/images/maintenance/nina22_rasveta_pre_posle_thumb.webp` i `...full.webp` su dva izvoza ISTE AI-stilizovane slike koju je korisnik odabrao. U odeljku *Održavanje na delu* video i slika stoje kao dva ravnopravna mala pregleda; klik na sliku otvara postojeći foto-modal. Opis: „Zamena neispravne rasvete u zajedničkim prostorijama stambene zgrade.“
+- Stilizovana slika je ilustrativna, nije autentična fotografija završnih radova; zato je kao takva označena. Ne mešati sa izvornim fotografijama bez eksplicitne saglasnosti.
+- `data/images.json`, `data/site.json`, `template.html` i `scripts/build.mjs` ažurirani su da **sledeći build ne obriše** stvarne reference i novi prikaz radova.
+- Showcase naslovna strana i Web Solutions generator nisu menjani. Pred produkciju potvrditi sve reference i objavu materijala s Marinom.

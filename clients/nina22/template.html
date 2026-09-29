@@ -110,15 +110,32 @@
     <section class="buildings cotton-section" id="objekti" aria-labelledby="gallery-title">
       <div class="wrap">
         <div class="section-heading"><h2 class="section-title" id="gallery-title">{{GALLERY_TITLE}} <span class="title-rule"></span></h2><p class="gallery-label">{{GALLERY_NOTE}}</p></div>
-        <div class="gallery-strip" aria-label="Galerija objekata: stvarna referenca i jasno označene ilustracije">{{GALLERY_HTML}}</div>
+        <div class="gallery-strip" aria-label="Galerija objekata: stvarne reference i jasno označene ilustracije">{{GALLERY_HTML}}</div>
       </div>
     </section>
 
     <section class="work" id="nas-rad" aria-labelledby="work-title">
       <div class="work-inner wrap">
-        <div class="work-copy"><h2 class="section-title section-title-light" id="work-title">{{VIDEO_TITLE}} <span class="title-rule"></span></h2><p>{{VIDEO_TEXT}}</p><button type="button" class="button button-gold" data-open-video="maintenance">{{VIDEO_BUTTON}} <svg><use href="#i-arrow"/></svg></button></div>
-        <button type="button" class="work-preview image-frame" data-open-video="maintenance" aria-label="Pokrenite video: mašinsko čišćenje hodnika"><img loading="lazy" src="{{VIDEO_POSTER}}" alt="Mašinsko čišćenje hodnika — kadar iz videa NINA 22"><span class="play-circle"><svg><use href="#i-play"/></svg></span></button>
-        <div class="work-proof" aria-label="Osnovne vrednosti"><span><svg><use href="#i-document"/></svg>Preglednost</span><span><svg><use href="#i-person"/></svg>Organizacija</span><span><svg><use href="#i-building"/></svg>Briga o objektu</span></div>
+        <div class="work-copy">
+          <h2 class="section-title section-title-light" id="work-title">{{VIDEO_TITLE}} <span class="title-rule"></span></h2>
+          <p>{{VIDEO_TEXT}}</p>
+        </div>
+        <div class="work-tile">
+          <button type="button" class="work-preview work-media-card image-frame" data-open-video="maintenance" aria-label="Pokreni video mašinskog čišćenja hodnika">
+            <img loading="lazy" decoding="async" src="{{VIDEO_POSTER}}" alt="Kadar iz stvarnog videa mašinskog čišćenja zajedničkih prostorija">
+            <span class="play-circle" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+          </button>
+          <div class="work-tile-caption"><strong>Mašinsko čišćenje</strong><span>▶ Pogledajte video</span></div>
+        </div>
+        <div class="work-tile">
+          <button type="button" class="work-lighting work-media-card image-frame" data-photo="{{LIGHTING_FULL}}" data-caption="{{LIGHTING_CAPTION}}" data-caption-mode="custom" data-actual="false" aria-label="Uvećaj stilizovani prikaz zamene rasvete pre i posle">
+            <img loading="lazy" decoding="async" src="{{LIGHTING_THUMB}}" alt="Stilizovani prikaz zamene rasvete, pre i posle">
+            <span class="work-compare-chip work-compare-chip--pre" aria-hidden="true">PRE</span>
+            <span class="work-compare-chip work-compare-chip--post" aria-hidden="true">POSLE</span>
+            <span class="image-preview-icon" aria-hidden="true">＋</span>
+          </button>
+          <div class="work-tile-caption"><strong>Zamena rasvete</strong><span>＋ Pogledajte veću sliku</span></div>
+        </div>
       </div>
     </section>
 

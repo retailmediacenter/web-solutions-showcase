@@ -94,7 +94,7 @@
   document.querySelectorAll('[data-photo]').forEach(b=>b.addEventListener('click',()=>{
     const wrap=document.createElement('div');const title=document.createElement('h2');title.id='modal-title';title.className='visually-hidden';title.textContent=b.dataset.caption||'Fotografija';
     const img=document.createElement('img');img.className='modal-photo';img.src=b.dataset.photo;img.alt=(b.dataset.caption||'Fotografija')+' — uvećano';
-    const caption=document.createElement('p');caption.className='modal-caption';caption.textContent=b.dataset.actual==='true'?(b.dataset.caption||'Stvarna referenca NINA 22'):(data.isDemo?'Demo fotografija — čeka se originalna fotografija NINA 22.':(b.dataset.caption||''));
+    const caption=document.createElement('p');caption.className='modal-caption';caption.textContent=b.dataset.captionMode==='custom'?(b.dataset.caption||''):(b.dataset.actual==='true'?(b.dataset.caption||'Stvarna referenca NINA 22'):(data.isDemo?'Demo fotografija — čeka se originalna fotografija NINA 22.':(b.dataset.caption||'')));if(b.dataset.captionMode==='custom')caption.style.display='none';
     wrap.append(title,img,caption);openModal(wrap,b);
   }));
   document.querySelectorAll('[data-open-video]').forEach(b=>b.addEventListener('click',()=>{

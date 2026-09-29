@@ -1,5 +1,5 @@
 {
-  "version": "3.3.0",
+  "version": "3.7.0",
   "status": "DEMO — originalne fotografije i detalje ponude potvrđuje NINA 22",
   "brand": {
     "name": "NINA 22",
@@ -98,12 +98,12 @@
   ],
   "gallery": {
     "title": "Naši objekti",
-    "note": "Prva referenca je stvarna: Miladina Pećinara 127G, Zlatibor. Preostale četiri fotografije su privremene ilustracije.",
+    "note": "Dva objekta pod upravljanjem sa dostavljenim fotografijama. Ostale fotografije su ilustrativne.",
     "items": [
       {
         "imageKey": "building1",
         "caption": "Miladina Pećinara 127G, Zlatibor",
-        "alt": "Stvarna fotografija stambenog kompleksa na adresi Miladina Pećinara 127G na Zlatiboru",
+        "alt": "Stvarni stambeni kompleks u ulici Miladina Pećinara 127G na Zlatiboru",
         "label": "Miladina Pećinara 127G",
         "sublabel": "Zlatibor · Objekat pod upravljanjem",
         "actual": true,
@@ -111,8 +111,12 @@
       },
       {
         "imageKey": "building2",
-        "caption": "Arhitektonski prikaz 02",
-        "alt": "Ilustracija uređenog ulaza stambene zgrade"
+        "caption": "Drinske Divizije 16, Zlatibor",
+        "alt": "Stvarna fotografija stambenog objekta u ulici Drinske Divizije 16 na Zlatiboru",
+        "actual": true,
+        "fullImageKey": "building2full",
+        "label": "Drinske Divizije 16",
+        "sublabel": "Zlatibor · Objekat pod upravljanjem"
       },
       {
         "imageKey": "building3",
@@ -133,7 +137,7 @@
   },
   "video": {
     "title": "Održavanje na delu",
-    "text": "Pogledajte deo našeg pristupa čišćenju i održavanju zajedničkih prostorija.",
+    "text": "Video mašinskog čišćenja i prikaz intervencije na zajedničkoj rasveti.",
     "button": "Pogledajte video",
     "note": "Autentičan snimak mašinskog čišćenja iz dostavljenog materijala NINA 22."
   },
@@ -185,5 +189,13 @@
       "Dubinsko čišćenje nameštaja",
       "Ostalo"
     ]
+  },
+  "work": {
+    "lighting": {
+      "thumbKey": "lightingThumb",
+      "fullKey": "lightingFull",
+      "caption": "Zamena neispravne rasvete u zajedničkim prostorijama stambene zgrade.",
+      "notice": "Stilizovani vizuelni prikaz na osnovu dostavljenog materijala."
+    }
   }
 }
