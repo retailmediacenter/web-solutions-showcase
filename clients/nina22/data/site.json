@@ -98,12 +98,16 @@
   ],
   "gallery": {
     "title": "Naši objekti",
-    "note": "Ilustrativne fotografije. Originalne fotografije i potvrđene reference NINA 22 ubacujemo po odobrenju.",
+    "note": "Prva referenca je stvarna: Miladina Pećinara 127G, Zlatibor. Preostale četiri fotografije su privremene ilustracije.",
     "items": [
       {
         "imageKey": "building1",
-        "caption": "Arhitektonski prikaz 01",
-        "alt": "Ilustracija stambene zgrade sa balkonima"
+        "caption": "Miladina Pećinara 127G, Zlatibor",
+        "alt": "Stvarna fotografija stambenog kompleksa na adresi Miladina Pećinara 127G na Zlatiboru",
+        "label": "Miladina Pećinara 127G",
+        "sublabel": "Zlatibor · Objekat pod upravljanjem",
+        "actual": true,
+        "fullImageKey": "building1full"
       },
       {
         "imageKey": "building2",

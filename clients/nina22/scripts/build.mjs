@@ -10,7 +10,19 @@ const icon=id=>`<svg aria-hidden="true"><use href="#i-${esc(id)}"/></svg>`;
 const img=key=>{let path=images[key];if(!path || !path.startsWith('assets/')) throw Error(`Missing image mapping ${key}`);if(!existsSync(resolve(root,path))) throw Error(`Image not found: ${path}`);return path;};
 const features=site.features.map(f=>`<article class="feature-card shine-card"><span class="feature-icon">${icon(f.icon)}</span><h3>${esc(f.title)}</h3><p>${esc(f.text)}</p></article>`).join('');
 const services=site.services.map(s=>`<button type="button" class="service-card shine-card" data-service-id="${esc(s.id)}" aria-label="Detalji o usluzi i slanje upita: ${esc(s.title)}"><span class="service-photo"><img loading="lazy" decoding="async" src="${esc(img(s.imageKey))}" alt="${esc(s.imageAlt||`Ilustrativni prikaz: ${s.title}`)}"></span><span class="service-body"><span class="service-icon">${icon(s.icon)}</span><span class="service-text"><strong>${esc(s.title)}</strong><small>${esc(s.text)}</small></span><span class="round-arrow">${icon('arrow')}</span></span></button>`).join('');
-const gallery=site.gallery.items.map((g,i)=>`<button type="button" class="gallery-item image-frame" data-photo="${esc(img(g.imageKey))}" data-caption="${esc(g.caption)}" aria-label="Otvori ilustrativnu fotografiju ${i+1}"><img src="${esc(img(g.imageKey))}" alt="${esc(g.alt||g.caption)}" loading="lazy" decoding="async"><span class="gallery-zoom">+</span></button>`).join('');
+const gallery=site.gallery.items.map((g,i)=>{
+  const actual=g.actual===true;
+  const thumbnail=img(g.imageKey);
+  const full=img(g.fullImageKey||g.imageKey);
+  const label=actual?(g.label||g.caption):'Demo fotografija';
+  const sublabel=actual?(g.sublabel||'Stvarna referenca'):'Ilustrativni prikaz · čeka se original';
+  return `<div class="gallery-entry${actual?' gallery-entry--actual':''}">
+    <button type="button" class="gallery-item image-frame" data-photo="${esc(full)}" data-caption="${esc(g.caption)}" data-actual="${actual}" aria-label="${esc(actual?'Pogledajte stvarnu fotografiju objekta '+g.caption:'Otvori ilustrativnu fotografiju '+(i+1))}">
+      <img src="${esc(thumbnail)}" alt="${esc(g.alt||g.caption)}" loading="lazy" decoding="async"><span class="gallery-zoom">+</span>
+    </button>
+    <div class="gallery-caption"><strong>${esc(label)}</strong><small>${esc(sublabel)}</small></div>
+  </div>`;
+}).join('');
 const deepPics=site.deepCleaning.imageKeys.map((k,i)=>`<div class="deep-pic image-frame deep-pic-${i+1}"><img src="${esc(img(k))}" alt="${esc(site.deepCleaning.imageAlts?.[i]||`Ilustrativni primer ${i+1} — čišćenje`)}" loading="lazy" decoding="async"></div>`).join('');
 // True pre/after requires TWO original photos of the SAME piece from the SAME angle.
 // Keep it hidden in the demo; never pretend generic stock photos are real results.
@@ -58,7 +70,7 @@ const jsonLD=publish?JSON.stringify({
 }).replaceAll('<','\\u003c'):'null';
 const runtime=JSON.stringify({videos:{maintenance:img('videoMaintenance'),...(site.deepCleaning.videoEnabled?{deep:images.videoDeepCleaning}:{})},services:site.services.map(x=>({id:x.id,title:x.title,text:x.text,details:x.details,highlights:x.highlights||[],subject:x.subject||x.title,image:img(x.imageKey),imageAlt:x.imageAlt})),email:contact.email,isDemo:!publish}).replaceAll('<','\\u003c').replaceAll('&','\\u0026');
 const replacements={
-  META_TITLE:seo.title,META_DESCRIPTION:seo.description,DEMO_BADGE:publish?'':'<span class="hero-photo-tag">DEMO FOTOGRAFIJA</span>',GALLERY_NOTE:publish?'Objekti u našem portfoliju':'Ilustrativne fotografije · čekaju se originali NINA 22',FOOTER_DEMO_NOTE:publish?'':'<span>DEMO · Fotografije objekata i usluga su ilustrativne.</span>',ROBOTS:publish?'index, follow, max-image-preview:large':'noindex, follow',PRODUCTION_SEO_HEAD:seoHead,BUSINESS_JSON_LD:publish?`<script type="application/ld+json">${jsonLD}</script>`:'<!-- JSON-LD enabled only for approved production content. -->',LOGO:img('logo'),HERO_IMAGE:img('hero'),HERO_LINE_1:site.hero.line1,HERO_LINE_2:site.hero.line2,HERO_TEXT:site.hero.text,HERO_BUTTON_1:site.hero.button1,HERO_BUTTON_2:site.hero.button2,
+  META_TITLE:seo.title,META_DESCRIPTION:seo.description,DEMO_BADGE:publish?'':'<span class="hero-photo-tag">DEMO FOTOGRAFIJA</span>',GALLERY_NOTE:publish?'Objekti u našem portfoliju':'Prva stvarna referenca · ostale fotografije su demo prikazi',FOOTER_DEMO_NOTE:publish?'':'<span>DEMO · Prva referenca je stvarna; ostale fotografije su ilustrativne.</span>',ROBOTS:publish?'index, follow, max-image-preview:large':'noindex, follow',PRODUCTION_SEO_HEAD:seoHead,BUSINESS_JSON_LD:publish?`<script type="application/ld+json">${jsonLD}</script>`:'<!-- JSON-LD enabled only for approved production content. -->',LOGO:img('logo'),HERO_IMAGE:img('hero'),HERO_LINE_1:site.hero.line1,HERO_LINE_2:site.hero.line2,HERO_TEXT:site.hero.text,HERO_BUTTON_1:site.hero.button1,HERO_BUTTON_2:site.hero.button2,
   FEATURES_HTML:features,SERVICES_HTML:services,GALLERY_TITLE:site.gallery.title,GALLERY_HTML:gallery,
   VIDEO_TITLE:site.video.title,VIDEO_TEXT:site.video.text,VIDEO_BUTTON:site.video.button,VIDEO_POSTER:img('videoPoster'),
   DEEP_TITLE:site.deepCleaning.title,DEEP_SUBTITLE:site.deepCleaning.subtitle,DEEP_TEXT:site.deepCleaning.text,DEEP_BUTTON:site.deepCleaning.button,DEEP_IMAGES_HTML:deepPics,DEEP_VIDEO_HTML:deepVideo,BEFORE_AFTER_HTML:beforeAfter,

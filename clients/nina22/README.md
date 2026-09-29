@@ -1,4 +1,4 @@
-# NINA 22 — V3.3 PREMIUM / SEO (glavni status)
+# NINA 22 — V3.4 PREMIUM / SEO (glavni status)
 
 **Status:** Samostalni demonstracioni sajt, spreman za postavljanje u `web-solutions-showcase`. Web Solutions generator/Editor V47 nije menjan niti kopiran. Ovaj projekat sadrži *pripremne* klijentske podatke, lokalne slike, CSS i JS; **nije već integrisan sa Editorom**. `data-editor-key` markeri su priprema, ne funkcionalni Editor.
 
@@ -15,14 +15,14 @@ Zameniti fotografiju u **istom folderu pod istim nazivom i ekstenzijom**. Nije p
 |---|---|---|---|
 | `assets/images/hero/` | HERO i preview za Showcase | 16:9 | `nina22_hero_01.webp` |
 | `assets/images/services/` | 3 kartice usluga | 4:3 | `nina22_service_upravljanje_01.webp` |
-| `assets/images/buildings/` | 5 primera zgrada | 4:3 | `nina22_building_01.webp` |
+| `assets/images/buildings/` | Prvi stvarni objekat + 4 demo prikaza | 16:9 kartica, puni original za popup | `nina22_building_01.webp` + `nina22_building_01_full.webp` |
 | `assets/images/cleaning/` | Dubinsko čišćenje, 3 fotografije | 4:3 | `nina22_cleaning_sofa_01.webp` |
 | `assets/images/brand/` | Originalni simbol iz Marinine slike | transparentni PNG | `nina22_original_mark.png` |
 | `assets/images/video-posters/` | Cover video-snimka | 4:3 | `nina22_video_odrzavanje_01.webp` |
 | `assets/images/social/` | Deljenje linka na društvenim mrežama | 1200 × 630 | `nina22-og.jpg` |
 | `assets/video/` | Video klipovi | originalni format | `odrzavanje-hodnika.mp4` |
 
-Sadašnje slike zgrada, nameštaja i usluga su **ilustrativni AI demo isečci** iz odobrenog vizuelnog koncepta, a ne fotografije NINA 22 objekata; ne objavljivati ih kao dokaz referenci. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
+Prva slika u galeriji zgrada je **stvarna fotografija** objekta na adresi Miladina Pećinara 127G, Zlatibor, prema materijalu koji je Marina dostavila. Preostale četiri slike zgrada, kao i slike nameštaja i usluga, **ilustrativni su demo isečci** i ne smeju se objavljivati kao stvarne reference NINA 22. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
 
 ## SEO: demo je zaštićen od indeksiranja
 - Sajt ima srpski `lang`, jedan H1, deskriptivne H2/H3 naslove, Title i meta opis orijentisane na **upravljanje i održavanje zgrada na Zlatiboru**, odgovarajuće `alt` opise, optimizovane lokalne WEBP fajlove, responsive layout i OG/Twitter meta oznake.
@@ -52,7 +52,7 @@ HERO fotografija sada je običan `<img src="assets/images/hero/nina22_hero_01.we
 ### V3.3 — završna izmena interakcija (29.09.2026)
 - **Izdvajamo:** četiri statične kartice, bez strelica i popupova; diskretna zlatna hover animacija ostaje.
 - **Usluge:** svaka kartica otvara modal sa fotografijom, potvrđivim opisom usluge, stavkama i obaveznim dugmetom **„Pošaljite upit”**. Dugme zatvara modal, bira odgovarajuću vrstu upita i vodi na kontakt-formular. Kontakt i dalje otvara korisnikovu email aplikaciju, **nije automatsko slanje**.
-- **Naši objekti:** popup sa velikim fotografijama ostaje. Trenutne su jasno označene kao ilustracije; zamena originalima ide kroz `assets/images/buildings/`.
+- **Naši objekti:** popup sa velikim fotografijama ostaje. Prva kartica prikazuje stvarni objekat (127G), ostale su jasno označene kao ilustracije; zamena originalima ide kroz `assets/images/buildings/`.
 - **Video:** originalni video mašinskog čišćenja ostaje u istom popup-u. Za dubinsko čišćenje budući video uključuje se postojećom opcijom `deepCleaning.videoEnabled` posle dodavanja fajla u `assets/video/`.
 - **Dubinsko čišćenje:** 3 demo slike sada su dekorativna galerija bez bespotrebnih popupova. Kod za **PRE/POSLE** klizač je pripremljen, ali je **namerno isključen** dok Marina ne pošalje dve autentične fotografije istog komada nameštaja iz istog ugla.
   1. Staviti konvertovane WEBP fotografije u `assets/images/cleaning/before-after/` kao `nina22_pre_01.webp` i `nina22_posle_01.webp` (ili ažurirati `data/images.json`).
@@ -60,3 +60,9 @@ HERO fotografija sada je običan `<img src="assets/images/hero/nina22_hero_01.we
   3. Pokrenuti `npm run build && npm run check` u folderu `clients/nina22`. Bez pravog materijala klizač se ne prikazuje i ne prikazuje lažan rezultat.
 - SEO i organizacija slika iz V3.2 ostaju. Za zamenu postojećih slika ISTIM imenima nije potreban build.
 - Sledeće: čekamo Marinine fotografije, video dubinskog čišćenja, originalni logo i potvrdu teksta/domena. Do tada nema dodatnog razvoja.
+
+### V3.4 — prva stvarna referenca (29.09.2026)
+- Izabrana originalna fotografija `Ovo je Miladina Pecinara 127G - 004.jpeg` za prvi objekat. Pripremljeni su optimizovani WEBP fajlovi: `assets/images/buildings/nina22_building_01.webp` (horizontalni kadar 16:9 za karticu) i `assets/images/buildings/nina22_building_01_full.webp` (cela uspravna fotografija za popup). Nije izmišljan ili generisan sadržaj fotografije.
+- Ispod kartice je natpis **Miladina Pećinara 127G — Zlatibor**, a u popup-u puna adresa. Ovo je adresa **objekta pod upravljanjem**, ne adresa sedišta agencije. Ne unositi je u lokalni SEO `LocalBusiness.address` kao adresu firme.
+- Preostale četiri ilustrativne slike su zadržane, ali jasno označene kao demo, kako se ne bi predstavljale kao stvarne reference. Prilikom pristizanja fotografija menjati odgovarajući `buildingN` zapis u `data/images.json` i dopuniti `data/site.json` (caption, alt, actual).
+- Showcase glavna strana i njen CSS nisu menjani. Sajt i dalje ima **noindex** do završetka i odobrenja produkcionog materijala.
