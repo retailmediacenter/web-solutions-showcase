@@ -1,11 +1,14 @@
 {
   "name": "nina22-showcase-demo",
   "private": true,
-  "version": "3.3.0",
+  "version": "4.1.0",
   "type": "module",
-  "description": "NINA 22 — modularni static demo, GitHub Pages spreman",
+  "description": "NINA 22 — jedan source za Showcase demo i produkcioni domen",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "build:dual": "node scripts/build-dual.mjs",
+    "build:production": "node scripts/build-dual.mjs production",
+    "build:showcase": "node scripts/build-dual.mjs showcase"
   }
 }

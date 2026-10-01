@@ -1,6 +1,6 @@
 {
-  "version": "3.9.0",
-  "status": "DEMO — originalne fotografije i detalje ponude potvrđuje NINA 22",
+  "version": "4.1.0",
+  "status": "SHOWCASE + PRODUCTION source — NINA 22",
   "brand": {
     "name": "NINA 22",
     "tagline": "Vaša zgrada. Naša briga.",
@@ -9,10 +9,10 @@
   "seo": {
     "title": "Upravljanje i održavanje zgrada Zlatibor | NINA 22",
     "description": "NINA 22 pruža profesionalno upravljanje stambenim zajednicama na Zlatiboru, organizaciju održavanja, čišćenje zajedničkih prostora i dubinsko čišćenje nameštaja.",
-    "productionUrl": "",
+    "productionUrl": "https://upravnik-zgrada-zlatibor.rs/",
     "indexable": false,
     "ogImage": "assets/images/social/nina22-og.jpg",
-    "imageAlt": "NINA 22 — upravljanje i održavanje zgrada na Zlatiboru, ilustrativna fotografija",
+    "imageAlt": "NINA 22 — upravljanje i održavanje zgrada na Zlatiboru",
     "serviceArea": "Zlatibor, Srbija",
     "language": "sr-RS"
   },
@@ -57,7 +57,7 @@
       "details": "Profesionalno upravljanje, komunikacija sa stanarima, dokumentacija, E-upravnik i obračun troškova prema dogovorenom obimu usluge.",
       "imageKey": "management",
       "icon": "building",
-      "imageAlt": "Ilustrativna fotografija stambene zgrade, usluga upravljanja",
+      "imageAlt": "Objekat u ulici Drinske Divizije 16 na Zlatiboru — upravljanje zgradama",
       "subject": "Profesionalno upravljanje",
       "highlights": [
         "Komunikacija sa stanarima i organizacija tekućih obaveza",
@@ -72,7 +72,7 @@
       "details": "Čišćenje ulaza i hodnika, mašinsko čišćenje zajedničkih površina, zimsko održavanje i održavanje okoline prema dogovoru.",
       "imageKey": "maintenance",
       "icon": "sparkle",
-      "imageAlt": "Ilustracija mašinskog čišćenja zajedničkih prostorija",
+      "imageAlt": "Ilustrativni prikaz mašinskog čišćenja podova u zajedničkom prostoru stambene zgrade",
       "subject": "Održavanje i čišćenje",
       "highlights": [
         "Čišćenje ulaza i zajedničkih prostorija",
@@ -87,7 +87,7 @@
       "details": "Koordinacija popravki, saradnja sa majstorima i organizacija dogovorenih radova na stambenoj zgradi.",
       "imageKey": "technical",
       "icon": "tool",
-      "imageAlt": "Ilustrativna fotografija pribora za tehničko održavanje zgrada",
+      "imageAlt": "Ilustrativni prikaz tehničke intervencije na rasveti u zajedničkom prostoru stambene zgrade",
       "subject": "Tehnička podrška",
       "highlights": [
         "Organizacija potrebnih popravki i intervencija",
