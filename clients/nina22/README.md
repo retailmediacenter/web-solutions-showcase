@@ -1,4 +1,4 @@
-# NINA 22 — V3.7 PREMIUM / SEO (glavni status)
+# NINA 22 — V3.9 PREMIUM / SEO (glavni status)
 
 **Status:** Samostalni demonstracioni sajt, spreman za postavljanje u `web-solutions-showcase`. Web Solutions generator/Editor V47 nije menjan niti kopiran. Ovaj projekat sadrži *pripremne* klijentske podatke, lokalne slike, CSS i JS; **nije već integrisan sa Editorom**. `data-editor-key` markeri su priprema, ne funkcionalni Editor.
 
@@ -15,14 +15,14 @@ Zameniti fotografiju u **istom folderu pod istim nazivom i ekstenzijom**. Nije p
 |---|---|---|---|
 | `assets/images/hero/` | HERO i preview za Showcase | 16:9 | `nina22_hero_01.webp` |
 | `assets/images/services/` | 3 kartice usluga | 4:3 | `nina22_service_upravljanje_01.webp` |
-| `assets/images/buildings/` | Dva stvarna objekta + 3 demo prikaza | 16:9 kartica, puni original za popup | `nina22_building_01.webp` + `nina22_building_01_full.webp` |
+| `assets/images/buildings/` | Tri stvarna objekta | 16:9 kartica, puni original za popup | `nina22_building_01.webp` + `nina22_building_01_full.webp` |
 | `assets/images/cleaning/` | Dubinsko čišćenje, 3 fotografije | 4:3 | `nina22_cleaning_sofa_01.webp` |
 | `assets/images/brand/` | Originalni simbol iz Marinine slike | transparentni PNG | `nina22_original_mark.png` |
 | `assets/images/video-posters/` | Cover video-snimka | 4:3 | `nina22_video_odrzavanje_01.webp` |
 | `assets/images/social/` | Deljenje linka na društvenim mrežama | 1200 × 630 | `nina22-og.jpg` |
 | `assets/video/` | Video klipovi | originalni format | `odrzavanje-hodnika.mp4` |
 
-Prve dve slike u galeriji zgrada su **stvarne fotografije** objekata na adresama Miladina Pećinara 127G i Drinske Divizije 16, Zlatibor, prema dostavljenim materijalima. Preostale tri slike zgrada, kao i slike nameštaja i usluga, **ilustrativni su demo isečci** i ne smeju se objavljivati kao stvarne reference NINA 22. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
+Sve tri slike u galeriji zgrada su **stvarne fotografije** objekata na adresama Miladina Pećinara 127G, Drinske Divizije 16 i Momira Lazarevića Buce 26, Zlatibor, prema dostavljenim materijalima. Slike nameštaja i pojedinih usluga su i dalje **ilustrativni demo isečci** dok klijent ne dostavi originale. Jedini autentični video trenutno je dostavljeni snimak mašinskog čišćenja hodnika. Posle zamene slika prilagoditi i `alt` opise u `data/site.json` da tačno opisuju stvarne fotografije.
 
 ## SEO: demo je zaštićen od indeksiranja
 - Sajt ima srpski `lang`, jedan H1, deskriptivne H2/H3 naslove, Title i meta opis orijentisane na **upravljanje i održavanje zgrada na Zlatiboru**, odgovarajuće `alt` opise, optimizovane lokalne WEBP fajlove, responsive layout i OG/Twitter meta oznake.

@@ -1,5 +1,5 @@
 {
-  "version": "3.7.0",
+  "version": "3.9.0",
   "status": "DEMO — originalne fotografije i detalje ponude potvrđuje NINA 22",
   "brand": {
     "name": "NINA 22",
@@ -98,7 +98,7 @@
   ],
   "gallery": {
     "title": "Naši objekti",
-    "note": "Dva objekta pod upravljanjem sa dostavljenim fotografijama. Ostale fotografije su ilustrativne.",
+    "note": "Tri objekta pod upravljanjem sa dostavljenim fotografijama.",
     "items": [
       {
         "imageKey": "building1",
@@ -120,18 +120,12 @@
       },
       {
         "imageKey": "building3",
-        "caption": "Arhitektonski prikaz 03",
-        "alt": "Ilustracija stambenog kompleksa sa zelenilom"
-      },
-      {
-        "imageKey": "building4",
-        "caption": "Arhitektonski prikaz 04",
-        "alt": "Ilustracija planinskog apartmanskog objekta"
-      },
-      {
-        "imageKey": "building5",
-        "caption": "Arhitektonski prikaz 05",
-        "alt": "Ilustracija modernog stambenog objekta"
+        "caption": "Momira Lazarevića Buce 26, Zlatibor",
+        "alt": "Stvarna fotografija stambenog objekta u ulici Momira Lazarevića Buce 26 na Zlatiboru",
+        "label": "Momira Lazarevića Buce 26",
+        "sublabel": "Zlatibor · Objekat pod upravljanjem",
+        "actual": true,
+        "fullImageKey": "building3full"
       }
     ]
   },
